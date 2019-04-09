@@ -8,8 +8,9 @@ pipeline {
 }
 		stage('upload') {
 		steps {
-			sh 'aws'
-		}
+			sh 'export PATH=~/.local/bin:$PATH'
+			sh 'aws '
+			}
 		}
 	}
 }
