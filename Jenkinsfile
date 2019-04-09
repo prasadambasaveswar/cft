@@ -8,7 +8,7 @@ pipeline {
 }
 		stage('upload') {
 		steps {
-			sh 'export PATH=~/.local/bin:$PATH'
+			sh 'export PATH=/root/.local/bin:$PATH'
 			sh 'aws '
 			}
 		}
