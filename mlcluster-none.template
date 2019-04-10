@@ -282,7 +282,7 @@ Mappings:
     TemplateUrl:
       base: 'https://s3.amazonaws.com/marklogic-releases'
     S3Directory:
-      base: '9.0-8'
+      base: '9.0-4'
   LicenseRegion2AMI:
     us-east-1:
       Enterprise: ami-0cd873f9b5dbbe54c
@@ -838,6 +838,10 @@ Resources:
           PolicyName: MLSession
       SecurityGroups:
         - !Ref ElbSecurityGroup
+      Subnets:
+        - !GetAtt [ManagedEniStack, Outputs.PrivateSubnet1Id]
+        - !If [MultiZone, !GetAtt [ManagedEniStack, Outputs.PrivateSubnet2Id], !Ref 'AWS::NoValue']
+        - !If [MultiZone, !GetAtt [ManagedEniStack, Outputs.PrivateSubnet3Id], !Ref 'AWS::NoValue']
       ConnectionDrainingPolicy:
         Enabled: 'true'
         Timeout: '60'
