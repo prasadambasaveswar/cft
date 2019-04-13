@@ -249,7 +249,7 @@ Parameters:
     Type: 'AWS::EC2::VPC::Id'
   SecurityGroup:
     Description: Security Group
-    Type: 'List<AWS::EC2::SecurityGroup::GroupName>'
+    Type: 'List<AWS::EC2::SecurityGroup::Id>'
   PrivateSubnets:
     Description: Private Subnets in the VPC. Accept either 1 subnet or 3 subnets. The order must be same as Availability Zone(s) selected.
     Type: 'List<AWS::EC2::Subnet::Id>'
