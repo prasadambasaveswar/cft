@@ -8,6 +8,7 @@ pipeline {
 }
 		stage('upload') {
 		steps {
+		load "${WORKSPACE}/parameters.groovy"
         withCredentials([[
             $class: 'AmazonWebServicesCredentialsBinding',
             credentialsId: 'awscredentials',
