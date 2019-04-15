@@ -15,7 +15,7 @@ pipeline {
             accessKeyVariable: 'AWS_ACCESS_KEY_ID',
             secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {
-	    sh 'AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} AWS_DEFAULT_REGION=us-east-2'
+	    sh 'AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}'
             sh 'aws cloudformation create-stack --stack-name ${StackName} --template-body file://ml-security2.template \
 		--parameters ParameterKey=KeyPairName,ParameterValue=${KeyName} ParameterKey=AZ,ParameterValue=${AZ} \
 		ParameterKey=IAMRole,ParameterValue=${IAMRole} ParameterKey=VolumeSize,ParameterValue=${VolumeSize} \
