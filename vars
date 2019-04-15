@@ -1,5 +1,5 @@
 export StackName="${params.StackName}"
-export KeyName="satya_us_east_2"
+export KeyName="${params.KeyName}"
 export IAMRole="marklogic"
 export VolumeSize=10
 export VolumeType="gp2"
