@@ -1,1 +1,0 @@
-export StackName="${params.StackName}"
