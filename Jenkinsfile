@@ -8,10 +8,16 @@ pipeline {
 }
 		stage('upload') {
 		steps {
-                        withCredentials([
-                             string(credentialsId: 'awscredentials', 'aws_access_key_id', variable: 'AWS_ACCESS_KEY_ID'),
-                             string(credentialsId: 'awscredentials', 'aws_secret_access_key', variable: 'AWS_SECRET_ACCESS_KEY'),
-			])
+        withCredentials([[
+            $class: 'AmazonWebServicesCredentialsBinding',
+            credentialsId: 'awscredentials',
+            accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+            secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+        ]]) {
+            sh 'AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} AWS_DEFAULT_REGION=us-east-1'
+            sh 'sleep 1m' // SOOOO HACKY!!!
+            sh 'aws s3 ls'
+        }
 			
 			}
 		}
