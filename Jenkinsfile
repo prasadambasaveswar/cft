@@ -18,7 +18,7 @@ pipeline {
 	    sh 'ls -lrth'
             sh 'aws cloudformation create-stack --stack-name ${StackName} --template-body file://ml-security2.template \
 		--parameters ParameterKey=KeyPairName,ParameterValue=${KeyName} ParameterKey=AZ,ParameterValue=${AZ} \
-		ParameterKey=IAMRole,ParameterValue={IAMRole}  ParameterKey=VolumeSize,ParameterValue=${VolumeSize} \
+		ParameterKey=IAMRole,ParameterValue=${IAMRole} ParameterKey=VolumeSize,ParameterValue=${VolumeSize} \
 		ParameterKey=VolumeType,ParameterValue=${VolumeType} ParameterKey=VolumeEncryption,ParameterValue=${VolumeEncryption} \
 		ParameterKey=VolumeEncryptionKey,ParameterValue=${VolumeEncryptionKey} ParameterKey=InstanceType,ParameterValue=${InstanceType} \
 		ParameterKey=SpotPrice,ParameterValue=${SpotPrice} ParameterKey=NumberOfZones,ParameterValue=${NumberOfZones} \
