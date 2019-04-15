@@ -228,14 +228,14 @@ Parameters:
     Type: Number
     AllowedValues:
       - 1
-      - 2
-    Default: 2
+      - 3
+    Default: 3
   NodesPerZone:
     Description: Total number of nodes per Zone. Set to 0 to shutdown/hibernate
     Type: Number
     MinValue: '0'
     MaxValue: '20'
-    Default: '3'
+    Default: '1'
   AZ:
     Description: The Availability Zones for VPC subnets. Accept either 1 zone or 3 zones. In the order of Subnet 1, Subnet 2 and Subnet 3 (if applicable).
     Type: 'List<AWS::EC2::AvailabilityZone::Name>'
