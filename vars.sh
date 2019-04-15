@@ -1,6 +1,8 @@
+#!/bin/bash
+
 export StackName="${params.StackName}"
 export KeyName="${params.KeyName}"
-export $IAMRole="marklogic"
+export IAMRole="marklogic"
 export VolumeSize=10
 export VolumeType="gp2"
 export VolumeEncryption="enable"
