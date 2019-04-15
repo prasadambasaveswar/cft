@@ -22,10 +22,10 @@ pipeline {
 		ParameterKey=VolumeType,ParameterValue=${VolumeType} ParameterKey=VolumeEncryption,ParameterValue=${VolumeEncryption} \
 		ParameterKey=VolumeEncryptionKey,ParameterValue=${VolumeEncryptionKey} ParameterKey=InstanceType,ParameterValue=${InstanceType} \
 		ParameterKey=SpotPrice,ParameterValue=${SpotPrice} ParameterKey=NumberOfZones,ParameterValue=${NumberOfZones} \
-		ParameterKey=NodesPerZone,ParameterValue=${NodesPerZone} ParameterKey=VPC,ParameterValue=${VPC}, \
+		ParameterKey=NodesPerZone,ParameterValue=${NodesPerZone} ParameterKey=VPC,ParameterValue=${VPC} \
 		ParameterKey=LogSNS,ParameterValue=${LogSNS} ParameterKey=PrivateSubnets,ParameterValue=${PrivateSubnets} \
-		ParameterKey=SecurityGroup,ParameterValue=${SecurityGroup} ParameterKey=AdminUser,ParameterValue=${AdminUser}, \
-		ParameterKey=AdminPass,ParameterValue=${AdminPass} ParameterKey=Licensee,ParameterValue=${Licensee}, \
+		ParameterKey=SecurityGroup,ParameterValue=${SecurityGroup} ParameterKey=AdminUser,ParameterValue=${AdminUser} \
+		ParameterKey=AdminPass,ParameterValue=${AdminPass} ParameterKey=Licensee,ParameterValue=${Licensee} \
 		ParameterKey=LicenseKey,ParameterValue=${LicenseKey}'
         }
 			}
