@@ -8,8 +8,11 @@ pipeline {
 }
 		stage('upload') {
 		steps {
-			sh 'export PATH=/root/.local/bin:$PATH'
-			sh 'aws '
+                        withCredentials([
+                             string(credentialsId: 'awscredentials', 'aws_access_key_id', variable: 'AWS_ACCESS_KEY_ID'),
+                             string(credentialsId: 'awscredentials', 'aws_secret_access_key', variable: 'AWS_SECRET_ACCESS_KEY'),
+			])
+			
 			}
 		}
 	}
