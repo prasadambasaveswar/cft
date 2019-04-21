@@ -4,6 +4,7 @@ Metadata:
   version: 9.0-6
   binary: MarkLogic-9.0-5.x86_64.rpm
   AWS::CloudFormation::Interface:
+
     ParameterGroups:
       - Label:
           default: "Resource Configuration"
