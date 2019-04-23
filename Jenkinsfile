@@ -19,5 +19,10 @@ pipeline {
 		'''
 			}
 		}
+		stage('deploy') {
+		steps {
+		sh '''
+		sh -x /mnt/xyz.sh
+		'''
 	}
-}
+	}
