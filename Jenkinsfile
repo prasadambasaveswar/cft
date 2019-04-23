@@ -11,8 +11,10 @@ pipeline {
 		sh '''
 		if [ $env == dev ]; then
 		echo "this is $env environment"
+		ls -lrth
 		else
 		echo "this is not $env environment"
+		pwd
 		fi
 		'''
 			}
